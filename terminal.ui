@@ -282,7 +282,23 @@
               </widget>
              </item>
              <item>
-              <widget class="QComboBox" name="type_gun_comboBox"/>
+              <widget class="QComboBox" name="type_gun_comboBox">
+               <item>
+                <property name="text">
+                 <string>Тип 1</string>
+                </property>
+               </item>
+               <item>
+                <property name="text">
+                 <string>Тип 2</string>
+                </property>
+               </item>
+               <item>
+                <property name="text">
+                 <string>Тип 3</string>
+                </property>
+               </item>
+              </widget>
              </item>
             </layout>
            </widget>
@@ -328,7 +344,23 @@
               </widget>
              </item>
              <item>
-              <widget class="QComboBox" name="type_ammo_comboBox"/>
+              <widget class="QComboBox" name="type_ammo_comboBox">
+               <item>
+                <property name="text">
+                 <string>Тип 1</string>
+                </property>
+               </item>
+               <item>
+                <property name="text">
+                 <string>Тип 2</string>
+                </property>
+               </item>
+               <item>
+                <property name="text">
+                 <string>Тип 3</string>
+                </property>
+               </item>
+              </widget>
              </item>
             </layout>
            </widget>
@@ -368,7 +400,23 @@
               </widget>
              </item>
              <item>
-              <widget class="QComboBox" name="type_shoot_comboBox"/>
+              <widget class="QComboBox" name="type_shoot_comboBox">
+               <item>
+                <property name="text">
+                 <string>Тип 1</string>
+                </property>
+               </item>
+               <item>
+                <property name="text">
+                 <string>Тип 2</string>
+                </property>
+               </item>
+               <item>
+                <property name="text">
+                 <string>Тип 3</string>
+                </property>
+               </item>
+              </widget>
              </item>
             </layout>
            </widget>
