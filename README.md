@@ -2,4 +2,6 @@
 
 - [x] Qt4
 - [x] 640x480
-- [ ] Linux arm x32
+- [ ] Linux Arm x32
+- [x] Protocol Buffers
+- [x] Communicating with the server
