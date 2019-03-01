@@ -9,6 +9,7 @@ QT       += core gui
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
 TARGET = tank-navigation_terminal
+LIBS += -lprotobuf
 TEMPLATE = app
 
 # The following define makes your compiler emit warnings if you use
@@ -25,10 +26,15 @@ DEFINES += QT_DEPRECATED_WARNINGS
 
 SOURCES += \
         main.cpp \
-        mainwindow.cpp
-
+        mainwindow.cpp \
+        command.pb.cc
+        
 HEADERS += \
-        mainwindow.h
+        mainwindow.h \
+        command.pb.h
+
+OTHER_FILES += \
+    command.proto
 
 FORMS += \
         terminal.ui
