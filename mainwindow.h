@@ -14,6 +14,7 @@ public:
     RecvThreads();
     ~RecvThreads();
     void run();
+    int sock_out = 0;
 
 signals:
     void processDone(QString, QString, QString, QString, QString, QString, QString, QString, QString);					//SIGNAL to show that some process have been done
@@ -35,7 +36,7 @@ class MainWindow : public QMainWindow{
         int sock = 0;
 
     signals:
-        bool void_signal();
+        void void_signal(bool);
 
     public slots:
         bool void_slot();
