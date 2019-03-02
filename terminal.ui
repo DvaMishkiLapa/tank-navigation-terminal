@@ -139,7 +139,7 @@
               <widget class="QLabel" name="label_7">
                <property name="minimumSize">
                 <size>
-                 <width>125</width>
+                 <width>132</width>
                  <height>0</height>
                 </size>
                </property>
@@ -159,6 +159,12 @@
              </item>
              <item>
               <widget class="QLabel" name="ammo_label">
+               <property name="frameShape">
+                <enum>QFrame::WinPanel</enum>
+               </property>
+               <property name="frameShadow">
+                <enum>QFrame::Sunken</enum>
+               </property>
                <property name="text">
                 <string>0</string>
                </property>
@@ -203,6 +209,12 @@
              </item>
              <item>
               <widget class="QLabel" name="gun_angle_label">
+               <property name="frameShape">
+                <enum>QFrame::WinPanel</enum>
+               </property>
+               <property name="frameShadow">
+                <enum>QFrame::Sunken</enum>
+               </property>
                <property name="text">
                 <string>0</string>
                </property>
@@ -538,6 +550,12 @@
                  <height>0</height>
                 </size>
                </property>
+               <property name="frameShape">
+                <enum>QFrame::WinPanel</enum>
+               </property>
+               <property name="frameShadow">
+                <enum>QFrame::Sunken</enum>
+               </property>
                <property name="text">
                 <string>0</string>
                </property>
@@ -597,6 +615,12 @@
              </item>
              <item>
               <widget class="QLabel" name="distance_label">
+               <property name="frameShape">
+                <enum>QFrame::WinPanel</enum>
+               </property>
+               <property name="frameShadow">
+                <enum>QFrame::Sunken</enum>
+               </property>
                <property name="text">
                 <string>0</string>
                </property>
@@ -647,6 +671,12 @@
              </item>
              <item>
               <widget class="QLabel" name="fuel_cons_label">
+               <property name="frameShape">
+                <enum>QFrame::WinPanel</enum>
+               </property>
+               <property name="frameShadow">
+                <enum>QFrame::Sunken</enum>
+               </property>
                <property name="text">
                 <string>345</string>
                </property>
@@ -697,6 +727,12 @@
              </item>
              <item>
               <widget class="QLabel" name="km_left_label">
+               <property name="frameShape">
+                <enum>QFrame::WinPanel</enum>
+               </property>
+               <property name="frameShadow">
+                <enum>QFrame::Sunken</enum>
+               </property>
                <property name="text">
                 <string>160</string>
                </property>
@@ -791,6 +827,12 @@
                  <height>0</height>
                 </size>
                </property>
+               <property name="frameShape">
+                <enum>QFrame::WinPanel</enum>
+               </property>
+               <property name="frameShadow">
+                <enum>QFrame::Sunken</enum>
+               </property>
                <property name="text">
                 <string>0</string>
                </property>
@@ -871,6 +913,12 @@
                  <width>65</width>
                  <height>0</height>
                 </size>
+               </property>
+               <property name="frameShape">
+                <enum>QFrame::WinPanel</enum>
+               </property>
+               <property name="frameShadow">
+                <enum>QFrame::Sunken</enum>
                </property>
                <property name="text">
                 <string>0</string>
@@ -963,7 +1011,57 @@
                </property>
               </widget>
              </item>
-             <item row="1" column="2">
+             <item row="0" column="2">
+              <widget class="QLabel" name="x_coord_label">
+               <property name="sizePolicy">
+                <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+                 <horstretch>0</horstretch>
+                 <verstretch>0</verstretch>
+                </sizepolicy>
+               </property>
+               <property name="minimumSize">
+                <size>
+                 <width>68</width>
+                 <height>0</height>
+                </size>
+               </property>
+               <property name="frameShape">
+                <enum>QFrame::WinPanel</enum>
+               </property>
+               <property name="frameShadow">
+                <enum>QFrame::Sunken</enum>
+               </property>
+               <property name="text">
+                <string>0</string>
+               </property>
+              </widget>
+             </item>
+             <item row="0" column="1">
+              <widget class="QLabel" name="y_coord_label">
+               <property name="sizePolicy">
+                <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+                 <horstretch>0</horstretch>
+                 <verstretch>0</verstretch>
+                </sizepolicy>
+               </property>
+               <property name="minimumSize">
+                <size>
+                 <width>68</width>
+                 <height>0</height>
+                </size>
+               </property>
+               <property name="frameShape">
+                <enum>QFrame::WinPanel</enum>
+               </property>
+               <property name="frameShadow">
+                <enum>QFrame::Sunken</enum>
+               </property>
+               <property name="text">
+                <string>0</string>
+               </property>
+              </widget>
+             </item>
+             <item row="1" column="1" colspan="2">
               <widget class="QLabel" name="height_label">
                <property name="sizePolicy">
                 <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
@@ -973,31 +1071,18 @@
                </property>
                <property name="minimumSize">
                 <size>
-                 <width>140</width>
+                 <width>144</width>
                  <height>0</height>
                 </size>
+               </property>
+               <property name="frameShape">
+                <enum>QFrame::WinPanel</enum>
+               </property>
+               <property name="frameShadow">
+                <enum>QFrame::Sunken</enum>
                </property>
                <property name="text">
                 <string>110</string>
-               </property>
-              </widget>
-             </item>
-             <item row="0" column="2">
-              <widget class="QLabel" name="coord_label">
-               <property name="sizePolicy">
-                <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
-                 <horstretch>0</horstretch>
-                 <verstretch>0</verstretch>
-                </sizepolicy>
-               </property>
-               <property name="minimumSize">
-                <size>
-                 <width>140</width>
-                 <height>0</height>
-                </size>
-               </property>
-               <property name="text">
-                <string>0, 0</string>
                </property>
               </widget>
              </item>
@@ -1512,6 +1597,9 @@ background: rgb(255, 255, 127)</string>
          <property name="title">
           <string>Управление защитой:</string>
          </property>
+         <property name="flat">
+          <bool>false</bool>
+         </property>
         </widget>
        </item>
        <item>
@@ -1531,8 +1619,6 @@ background: rgb(255, 255, 127)</string>
          <property name="title">
           <string>Параметры Пс-Ш:</string>
          </property>
-         <zorder>groupBox_14</zorder>
-         <zorder>groupBox_14</zorder>
         </widget>
        </item>
       </layout>

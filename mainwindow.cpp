@@ -169,11 +169,12 @@ void MainWindow::threadProcessDone(QString str_speed,
 	ui->speed_label->setText(str_speed);
     ui->distance_label->setText(str_distance);
     ui->ammo_label->setText(str_ammo);
+    //str_protect
     ui->gun_angle_label->setText(str_gun_angle);
     ui->turn_label->setText(str_machine_turn);
     ui->gun_turn_label->setText(str_gun_turn);
-    QString coord_str = str_x + ", " + str_y;
-    ui->coord_label->setText(coord_str);
+    ui->x_coord_label->setText(str_x);
+    ui->y_coord_label->setText(str_y);
 }
 
 // tank control
