@@ -1,20 +1,17 @@
 #ifndef MAINWINDOW_H
 #define MAINWINDOW_H
-// #include <string>
 #include <QThread>
 #include <QMainWindow>
 
-
-class RecvThreads :
-    public QThread
-{
+// Класс для отдельного потока
+class RecvThreads : public QThread{
     Q_OBJECT
 
 public:
     RecvThreads();
     ~RecvThreads();
     void run();
-    int sock_out = 0;
+    int sock_out = 0; // Сокет получения данных
 
 signals:
     void processDone(QString, QString, QString, QString, QString, QString, QString, QString, QString);					//SIGNAL to show that some process have been done
@@ -33,7 +30,7 @@ class MainWindow : public QMainWindow{
         Ui::MainWindow *ui;
         RecvThreads* m_pqThread;
         ~MainWindow();
-        int sock = 0;
+        int sock = 0; // Сокет отправки данных
 
     signals:
         void void_signal(bool);
