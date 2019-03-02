@@ -38,7 +38,7 @@ namespace protobuf_command_2eproto {
 struct TableStruct {
   static const ::google::protobuf::internal::ParseTableField entries[];
   static const ::google::protobuf::internal::AuxillaryParseTableField aux[];
-  static const ::google::protobuf::internal::ParseTable schema[3];
+  static const ::google::protobuf::internal::ParseTable schema[2];
   static const ::google::protobuf::internal::FieldMetadata field_metadata[];
   static const ::google::protobuf::internal::SerializationTable serialization_table[];
   static const ::google::protobuf::uint32 offsets[];
@@ -52,15 +52,11 @@ extern ActionDefaultTypeInternal _Action_default_instance_;
 class Data;
 class DataDefaultTypeInternal;
 extern DataDefaultTypeInternal _Data_default_instance_;
-class Data_coords;
-class Data_coordsDefaultTypeInternal;
-extern Data_coordsDefaultTypeInternal _Data_coords_default_instance_;
 }  // namespace protocol
 namespace google {
 namespace protobuf {
 template<> ::protocol::Action* Arena::CreateMaybeMessage<::protocol::Action>(Arena*);
 template<> ::protocol::Data* Arena::CreateMaybeMessage<::protocol::Data>(Arena*);
-template<> ::protocol::Data_coords* Arena::CreateMaybeMessage<::protocol::Data_coords>(Arena*);
 }  // namespace protobuf
 }  // namespace google
 namespace protocol {
@@ -178,116 +174,6 @@ class Action : public ::google::protobuf::Message /* @@protoc_insertion_point(cl
 };
 // -------------------------------------------------------------------
 
-class Data_coords : public ::google::protobuf::Message /* @@protoc_insertion_point(class_definition:protocol.Data.coords) */ {
- public:
-  Data_coords();
-  virtual ~Data_coords();
-
-  Data_coords(const Data_coords& from);
-
-  inline Data_coords& operator=(const Data_coords& from) {
-    CopyFrom(from);
-    return *this;
-  }
-  #if LANG_CXX11
-  Data_coords(Data_coords&& from) noexcept
-    : Data_coords() {
-    *this = ::std::move(from);
-  }
-
-  inline Data_coords& operator=(Data_coords&& from) noexcept {
-    if (GetArenaNoVirtual() == from.GetArenaNoVirtual()) {
-      if (this != &from) InternalSwap(&from);
-    } else {
-      CopyFrom(from);
-    }
-    return *this;
-  }
-  #endif
-  static const ::google::protobuf::Descriptor* descriptor();
-  static const Data_coords& default_instance();
-
-  static void InitAsDefaultInstance();  // FOR INTERNAL USE ONLY
-  static inline const Data_coords* internal_default_instance() {
-    return reinterpret_cast<const Data_coords*>(
-               &_Data_coords_default_instance_);
-  }
-  static constexpr int kIndexInFileMessages =
-    1;
-
-  void Swap(Data_coords* other);
-  friend void swap(Data_coords& a, Data_coords& b) {
-    a.Swap(&b);
-  }
-
-  // implements Message ----------------------------------------------
-
-  inline Data_coords* New() const final {
-    return CreateMaybeMessage<Data_coords>(NULL);
-  }
-
-  Data_coords* New(::google::protobuf::Arena* arena) const final {
-    return CreateMaybeMessage<Data_coords>(arena);
-  }
-  void CopyFrom(const ::google::protobuf::Message& from) final;
-  void MergeFrom(const ::google::protobuf::Message& from) final;
-  void CopyFrom(const Data_coords& from);
-  void MergeFrom(const Data_coords& from);
-  void Clear() final;
-  bool IsInitialized() const final;
-
-  size_t ByteSizeLong() const final;
-  bool MergePartialFromCodedStream(
-      ::google::protobuf::io::CodedInputStream* input) final;
-  void SerializeWithCachedSizes(
-      ::google::protobuf::io::CodedOutputStream* output) const final;
-  ::google::protobuf::uint8* InternalSerializeWithCachedSizesToArray(
-      bool deterministic, ::google::protobuf::uint8* target) const final;
-  int GetCachedSize() const final { return _cached_size_.Get(); }
-
-  private:
-  void SharedCtor();
-  void SharedDtor();
-  void SetCachedSize(int size) const final;
-  void InternalSwap(Data_coords* other);
-  private:
-  inline ::google::protobuf::Arena* GetArenaNoVirtual() const {
-    return NULL;
-  }
-  inline void* MaybeArenaPtr() const {
-    return NULL;
-  }
-  public:
-
-  ::google::protobuf::Metadata GetMetadata() const final;
-
-  // nested types ----------------------------------------------------
-
-  // accessors -------------------------------------------------------
-
-  // float x = 1;
-  void clear_x();
-  static const int kXFieldNumber = 1;
-  float x() const;
-  void set_x(float value);
-
-  // float y = 2;
-  void clear_y();
-  static const int kYFieldNumber = 2;
-  float y() const;
-  void set_y(float value);
-
-  // @@protoc_insertion_point(class_scope:protocol.Data.coords)
- private:
-
-  ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
-  float x_;
-  float y_;
-  mutable ::google::protobuf::internal::CachedSize _cached_size_;
-  friend struct ::protobuf_command_2eproto::TableStruct;
-};
-// -------------------------------------------------------------------
-
 class Data : public ::google::protobuf::Message /* @@protoc_insertion_point(class_definition:protocol.Data) */ {
  public:
   Data();
@@ -323,7 +209,7 @@ class Data : public ::google::protobuf::Message /* @@protoc_insertion_point(clas
                &_Data_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    2;
+    1;
 
   void Swap(Data* other);
   friend void swap(Data& a, Data& b) {
@@ -373,8 +259,6 @@ class Data : public ::google::protobuf::Message /* @@protoc_insertion_point(clas
 
   // nested types ----------------------------------------------------
 
-  typedef Data_coords coords;
-
   // accessors -------------------------------------------------------
 
   // float speed = 1;
@@ -419,6 +303,18 @@ class Data : public ::google::protobuf::Message /* @@protoc_insertion_point(clas
   float gun_turn() const;
   void set_gun_turn(float value);
 
+  // float x = 8;
+  void clear_x();
+  static const int kXFieldNumber = 8;
+  float x() const;
+  void set_x(float value);
+
+  // float y = 9;
+  void clear_y();
+  static const int kYFieldNumber = 9;
+  float y() const;
+  void set_y(float value);
+
   // @@protoc_insertion_point(class_scope:protocol.Data)
  private:
 
@@ -430,6 +326,8 @@ class Data : public ::google::protobuf::Message /* @@protoc_insertion_point(clas
   ::google::protobuf::int32 protect_;
   float machine_turn_;
   float gun_turn_;
+  float x_;
+  float y_;
   mutable ::google::protobuf::internal::CachedSize _cached_size_;
   friend struct ::protobuf_command_2eproto::TableStruct;
 };
@@ -495,38 +393,6 @@ inline void Action::set_allocated_action(::std::string* action) {
   }
   action_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), action);
   // @@protoc_insertion_point(field_set_allocated:protocol.Action.action)
-}
-
-// -------------------------------------------------------------------
-
-// Data_coords
-
-// float x = 1;
-inline void Data_coords::clear_x() {
-  x_ = 0;
-}
-inline float Data_coords::x() const {
-  // @@protoc_insertion_point(field_get:protocol.Data.coords.x)
-  return x_;
-}
-inline void Data_coords::set_x(float value) {
-  
-  x_ = value;
-  // @@protoc_insertion_point(field_set:protocol.Data.coords.x)
-}
-
-// float y = 2;
-inline void Data_coords::clear_y() {
-  y_ = 0;
-}
-inline float Data_coords::y() const {
-  // @@protoc_insertion_point(field_get:protocol.Data.coords.y)
-  return y_;
-}
-inline void Data_coords::set_y(float value) {
-  
-  y_ = value;
-  // @@protoc_insertion_point(field_set:protocol.Data.coords.y)
 }
 
 // -------------------------------------------------------------------
@@ -631,11 +497,37 @@ inline void Data::set_gun_turn(float value) {
   // @@protoc_insertion_point(field_set:protocol.Data.gun_turn)
 }
 
+// float x = 8;
+inline void Data::clear_x() {
+  x_ = 0;
+}
+inline float Data::x() const {
+  // @@protoc_insertion_point(field_get:protocol.Data.x)
+  return x_;
+}
+inline void Data::set_x(float value) {
+  
+  x_ = value;
+  // @@protoc_insertion_point(field_set:protocol.Data.x)
+}
+
+// float y = 9;
+inline void Data::clear_y() {
+  y_ = 0;
+}
+inline float Data::y() const {
+  // @@protoc_insertion_point(field_get:protocol.Data.y)
+  return y_;
+}
+inline void Data::set_y(float value) {
+  
+  y_ = value;
+  // @@protoc_insertion_point(field_set:protocol.Data.y)
+}
+
 #ifdef __GNUC__
   #pragma GCC diagnostic pop
 #endif  // __GNUC__
-// -------------------------------------------------------------------
-
 // -------------------------------------------------------------------
 
 

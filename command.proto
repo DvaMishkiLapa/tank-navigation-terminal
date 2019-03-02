@@ -14,9 +14,6 @@ message Data {
     int32 protect = 5;
     float machine_turn = 6;
     float gun_turn = 7;
-
-    message coords {
-        float x = 1;
-        float y = 2;
-    }
+    float x = 8;
+    float y = 9;
 }
