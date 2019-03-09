@@ -274,3 +274,23 @@ void MainWindow::on_type_shoot_comboBox_currentIndexChanged(){
     cout << ui->type_shoot_comboBox->currentText().toUtf8().data();
     cout << "> ###\n";
 }
+
+
+void MainWindow::on_connect_clicked(){
+    qserver_ip = ui->ip_lineEdit->text();
+    qserver_port = ui->port_lineEdit->text();
+    server_ip = qserver_ip.toStdString().c_str();
+    server_port = qserver_port.split(" ")[0].toInt();
+
+    start_connection_out();
+    timer = new QTimer();
+    connect(timer, SIGNAL(timeout()), this, SLOT(update_data()));
+    timer->start(17);
+    ui->stackedWidget->setCurrentIndex(0); // go to main page
+}
+
+
+void MainWindow::on_exit_clicked(){
+    close_and_del();
+    exit(1);
+}

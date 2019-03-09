@@ -64,6 +64,9 @@ class MainWindow : public QMainWindow{
         void on_type_gun_comboBox_currentIndexChanged();
         void on_type_ammo_comboBox_currentIndexChanged();
         void on_type_shoot_comboBox_currentIndexChanged();
+
+        void on_connect_clicked();
+        void on_exit_clicked();
 };
 
 #endif // MAINWINDOW_H
