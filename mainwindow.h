@@ -1,21 +1,8 @@
 #ifndef MAINWINDOW_H
 #define MAINWINDOW_H
-#include <QThread>
+
 #include <QMainWindow>
-
-// Класс для отдельного потока
-class RecvThreads : public QThread{
-    Q_OBJECT
-
-public:
-    RecvThreads();
-    ~RecvThreads();
-    void run();
-    int sock_out = 0; // Сокет получения данных
-
-signals:
-    void processDone(QString, QString, QString, QString, QString, QString, QString, QString, QString);					//SIGNAL to show that some process have been done
-};
+#include <QTimer>
 
 
 namespace Ui {
@@ -28,20 +15,26 @@ class MainWindow : public QMainWindow{
     public:
         explicit MainWindow(QWidget *parent = 0);
         Ui::MainWindow *ui;
-        RecvThreads* m_pqThread;
         ~MainWindow();
-        int sock = 0; // Сокет отправки данных
 
-    signals:
-        void void_signal(bool);
+        int sock_out = 0; // Сокет отправки данных
+        int sock_in = 0;  // Сокет принятия данных
+
+        QString qserver_ip = "";
+        QString qserver_port = "";
+
+        const char *server_ip;
+        int server_port = 0;
+
+        QTimer *timer = 0;
+        std::string command = "42";
+        bool flag = 1;
 
     public slots:
-        bool void_slot();
-    	void startThread(bool);
-	    void threadProcessDone(QString, QString, QString, QString, QString, QString, QString, QString, QString);
-
-        void act_send(std::string &act);
-        void start_connection();
+        void close_and_del();
+        void start_connection_out();
+        void start_connection_in();
+        void update_data();
 
         // tank control slots
         void on_tank_forward_clicked();
