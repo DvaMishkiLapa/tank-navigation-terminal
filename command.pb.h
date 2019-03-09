@@ -273,45 +273,51 @@ class Data : public ::google::protobuf::Message /* @@protoc_insertion_point(clas
   float distance() const;
   void set_distance(float value);
 
-  // int32 ammo = 3;
+  // float km_left = 3;
+  void clear_km_left();
+  static const int kKmLeftFieldNumber = 3;
+  float km_left() const;
+  void set_km_left(float value);
+
+  // int32 ammo = 4;
   void clear_ammo();
-  static const int kAmmoFieldNumber = 3;
+  static const int kAmmoFieldNumber = 4;
   ::google::protobuf::int32 ammo() const;
   void set_ammo(::google::protobuf::int32 value);
 
-  // float gun_angle = 4;
+  // float gun_angle = 5;
   void clear_gun_angle();
-  static const int kGunAngleFieldNumber = 4;
+  static const int kGunAngleFieldNumber = 5;
   float gun_angle() const;
   void set_gun_angle(float value);
 
-  // int32 protect = 5;
+  // int32 protect = 6;
   void clear_protect();
-  static const int kProtectFieldNumber = 5;
+  static const int kProtectFieldNumber = 6;
   ::google::protobuf::int32 protect() const;
   void set_protect(::google::protobuf::int32 value);
 
-  // float machine_turn = 6;
+  // float machine_turn = 7;
   void clear_machine_turn();
-  static const int kMachineTurnFieldNumber = 6;
+  static const int kMachineTurnFieldNumber = 7;
   float machine_turn() const;
   void set_machine_turn(float value);
 
-  // float gun_turn = 7;
+  // float gun_turn = 8;
   void clear_gun_turn();
-  static const int kGunTurnFieldNumber = 7;
+  static const int kGunTurnFieldNumber = 8;
   float gun_turn() const;
   void set_gun_turn(float value);
 
-  // float x = 8;
+  // float x = 9;
   void clear_x();
-  static const int kXFieldNumber = 8;
+  static const int kXFieldNumber = 9;
   float x() const;
   void set_x(float value);
 
-  // float y = 9;
+  // float y = 10;
   void clear_y();
-  static const int kYFieldNumber = 9;
+  static const int kYFieldNumber = 10;
   float y() const;
   void set_y(float value);
 
@@ -321,6 +327,7 @@ class Data : public ::google::protobuf::Message /* @@protoc_insertion_point(clas
   ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
   float speed_;
   float distance_;
+  float km_left_;
   ::google::protobuf::int32 ammo_;
   float gun_angle_;
   ::google::protobuf::int32 protect_;
@@ -427,7 +434,21 @@ inline void Data::set_distance(float value) {
   // @@protoc_insertion_point(field_set:protocol.Data.distance)
 }
 
-// int32 ammo = 3;
+// float km_left = 3;
+inline void Data::clear_km_left() {
+  km_left_ = 0;
+}
+inline float Data::km_left() const {
+  // @@protoc_insertion_point(field_get:protocol.Data.km_left)
+  return km_left_;
+}
+inline void Data::set_km_left(float value) {
+  
+  km_left_ = value;
+  // @@protoc_insertion_point(field_set:protocol.Data.km_left)
+}
+
+// int32 ammo = 4;
 inline void Data::clear_ammo() {
   ammo_ = 0;
 }
@@ -441,7 +462,7 @@ inline void Data::set_ammo(::google::protobuf::int32 value) {
   // @@protoc_insertion_point(field_set:protocol.Data.ammo)
 }
 
-// float gun_angle = 4;
+// float gun_angle = 5;
 inline void Data::clear_gun_angle() {
   gun_angle_ = 0;
 }
@@ -455,7 +476,7 @@ inline void Data::set_gun_angle(float value) {
   // @@protoc_insertion_point(field_set:protocol.Data.gun_angle)
 }
 
-// int32 protect = 5;
+// int32 protect = 6;
 inline void Data::clear_protect() {
   protect_ = 0;
 }
@@ -469,7 +490,7 @@ inline void Data::set_protect(::google::protobuf::int32 value) {
   // @@protoc_insertion_point(field_set:protocol.Data.protect)
 }
 
-// float machine_turn = 6;
+// float machine_turn = 7;
 inline void Data::clear_machine_turn() {
   machine_turn_ = 0;
 }
@@ -483,7 +504,7 @@ inline void Data::set_machine_turn(float value) {
   // @@protoc_insertion_point(field_set:protocol.Data.machine_turn)
 }
 
-// float gun_turn = 7;
+// float gun_turn = 8;
 inline void Data::clear_gun_turn() {
   gun_turn_ = 0;
 }
@@ -497,7 +518,7 @@ inline void Data::set_gun_turn(float value) {
   // @@protoc_insertion_point(field_set:protocol.Data.gun_turn)
 }
 
-// float x = 8;
+// float x = 9;
 inline void Data::clear_x() {
   x_ = 0;
 }
@@ -511,7 +532,7 @@ inline void Data::set_x(float value) {
   // @@protoc_insertion_point(field_set:protocol.Data.x)
 }
 
-// float y = 9;
+// float y = 10;
 inline void Data::clear_y() {
   y_ = 0;
 }

@@ -81,6 +81,7 @@ const ::google::protobuf::uint32 TableStruct::offsets[] GOOGLE_PROTOBUF_ATTRIBUT
   ~0u,  // no _weak_field_map_
   GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::protocol::Data, speed_),
   GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::protocol::Data, distance_),
+  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::protocol::Data, km_left_),
   GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::protocol::Data, ammo_),
   GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::protocol::Data, gun_angle_),
   GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::protocol::Data, protect_),
@@ -121,14 +122,14 @@ void AddDescriptorsImpl() {
   InitDefaults();
   static const char descriptor[] GOOGLE_PROTOBUF_ATTRIBUTE_SECTION_VARIABLE(protodesc_cold) = {
       "\n\rcommand.proto\022\010protocol\"\030\n\006Action\022\016\n\006a"
-      "ction\030\001 \001(\t\"\227\001\n\004Data\022\r\n\005speed\030\001 \001(\002\022\020\n\010d"
-      "istance\030\002 \001(\002\022\014\n\004ammo\030\003 \001(\005\022\021\n\tgun_angle"
-      "\030\004 \001(\002\022\017\n\007protect\030\005 \001(\005\022\024\n\014machine_turn\030"
-      "\006 \001(\002\022\020\n\010gun_turn\030\007 \001(\002\022\t\n\001x\030\010 \001(\002\022\t\n\001y\030"
-      "\t \001(\002b\006proto3"
+      "ction\030\001 \001(\t\"\250\001\n\004Data\022\r\n\005speed\030\001 \001(\002\022\020\n\010d"
+      "istance\030\002 \001(\002\022\017\n\007km_left\030\003 \001(\002\022\014\n\004ammo\030\004"
+      " \001(\005\022\021\n\tgun_angle\030\005 \001(\002\022\017\n\007protect\030\006 \001(\005"
+      "\022\024\n\014machine_turn\030\007 \001(\002\022\020\n\010gun_turn\030\010 \001(\002"
+      "\022\t\n\001x\030\t \001(\002\022\t\n\001y\030\n \001(\002b\006proto3"
   };
   ::google::protobuf::DescriptorPool::InternalAddGeneratedFile(
-      descriptor, 213);
+      descriptor, 230);
   ::google::protobuf::MessageFactory::InternalRegisterGeneratedFile(
     "command.proto", &protobuf_RegisterTypes);
 }
@@ -395,6 +396,7 @@ void Data::InitAsDefaultInstance() {
 #if !defined(_MSC_VER) || _MSC_VER >= 1900
 const int Data::kSpeedFieldNumber;
 const int Data::kDistanceFieldNumber;
+const int Data::kKmLeftFieldNumber;
 const int Data::kAmmoFieldNumber;
 const int Data::kGunAngleFieldNumber;
 const int Data::kProtectFieldNumber;
@@ -499,10 +501,24 @@ bool Data::MergePartialFromCodedStream(
         break;
       }
 
-      // int32 ammo = 3;
+      // float km_left = 3;
       case 3: {
         if (static_cast< ::google::protobuf::uint8>(tag) ==
-            static_cast< ::google::protobuf::uint8>(24u /* 24 & 0xFF */)) {
+            static_cast< ::google::protobuf::uint8>(29u /* 29 & 0xFF */)) {
+
+          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
+                   float, ::google::protobuf::internal::WireFormatLite::TYPE_FLOAT>(
+                 input, &km_left_)));
+        } else {
+          goto handle_unusual;
+        }
+        break;
+      }
+
+      // int32 ammo = 4;
+      case 4: {
+        if (static_cast< ::google::protobuf::uint8>(tag) ==
+            static_cast< ::google::protobuf::uint8>(32u /* 32 & 0xFF */)) {
 
           DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
                    ::google::protobuf::int32, ::google::protobuf::internal::WireFormatLite::TYPE_INT32>(
@@ -513,10 +529,10 @@ bool Data::MergePartialFromCodedStream(
         break;
       }
 
-      // float gun_angle = 4;
-      case 4: {
+      // float gun_angle = 5;
+      case 5: {
         if (static_cast< ::google::protobuf::uint8>(tag) ==
-            static_cast< ::google::protobuf::uint8>(37u /* 37 & 0xFF */)) {
+            static_cast< ::google::protobuf::uint8>(45u /* 45 & 0xFF */)) {
 
           DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
                    float, ::google::protobuf::internal::WireFormatLite::TYPE_FLOAT>(
@@ -527,10 +543,10 @@ bool Data::MergePartialFromCodedStream(
         break;
       }
 
-      // int32 protect = 5;
-      case 5: {
+      // int32 protect = 6;
+      case 6: {
         if (static_cast< ::google::protobuf::uint8>(tag) ==
-            static_cast< ::google::protobuf::uint8>(40u /* 40 & 0xFF */)) {
+            static_cast< ::google::protobuf::uint8>(48u /* 48 & 0xFF */)) {
 
           DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
                    ::google::protobuf::int32, ::google::protobuf::internal::WireFormatLite::TYPE_INT32>(
@@ -541,10 +557,10 @@ bool Data::MergePartialFromCodedStream(
         break;
       }
 
-      // float machine_turn = 6;
-      case 6: {
+      // float machine_turn = 7;
+      case 7: {
         if (static_cast< ::google::protobuf::uint8>(tag) ==
-            static_cast< ::google::protobuf::uint8>(53u /* 53 & 0xFF */)) {
+            static_cast< ::google::protobuf::uint8>(61u /* 61 & 0xFF */)) {
 
           DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
                    float, ::google::protobuf::internal::WireFormatLite::TYPE_FLOAT>(
@@ -555,10 +571,10 @@ bool Data::MergePartialFromCodedStream(
         break;
       }
 
-      // float gun_turn = 7;
-      case 7: {
+      // float gun_turn = 8;
+      case 8: {
         if (static_cast< ::google::protobuf::uint8>(tag) ==
-            static_cast< ::google::protobuf::uint8>(61u /* 61 & 0xFF */)) {
+            static_cast< ::google::protobuf::uint8>(69u /* 69 & 0xFF */)) {
 
           DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
                    float, ::google::protobuf::internal::WireFormatLite::TYPE_FLOAT>(
@@ -569,10 +585,10 @@ bool Data::MergePartialFromCodedStream(
         break;
       }
 
-      // float x = 8;
-      case 8: {
+      // float x = 9;
+      case 9: {
         if (static_cast< ::google::protobuf::uint8>(tag) ==
-            static_cast< ::google::protobuf::uint8>(69u /* 69 & 0xFF */)) {
+            static_cast< ::google::protobuf::uint8>(77u /* 77 & 0xFF */)) {
 
           DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
                    float, ::google::protobuf::internal::WireFormatLite::TYPE_FLOAT>(
@@ -583,10 +599,10 @@ bool Data::MergePartialFromCodedStream(
         break;
       }
 
-      // float y = 9;
-      case 9: {
+      // float y = 10;
+      case 10: {
         if (static_cast< ::google::protobuf::uint8>(tag) ==
-            static_cast< ::google::protobuf::uint8>(77u /* 77 & 0xFF */)) {
+            static_cast< ::google::protobuf::uint8>(85u /* 85 & 0xFF */)) {
 
           DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
                    float, ::google::protobuf::internal::WireFormatLite::TYPE_FLOAT>(
@@ -633,39 +649,44 @@ void Data::SerializeWithCachedSizes(
     ::google::protobuf::internal::WireFormatLite::WriteFloat(2, this->distance(), output);
   }
 
-  // int32 ammo = 3;
+  // float km_left = 3;
+  if (this->km_left() != 0) {
+    ::google::protobuf::internal::WireFormatLite::WriteFloat(3, this->km_left(), output);
+  }
+
+  // int32 ammo = 4;
   if (this->ammo() != 0) {
-    ::google::protobuf::internal::WireFormatLite::WriteInt32(3, this->ammo(), output);
+    ::google::protobuf::internal::WireFormatLite::WriteInt32(4, this->ammo(), output);
   }
 
-  // float gun_angle = 4;
+  // float gun_angle = 5;
   if (this->gun_angle() != 0) {
-    ::google::protobuf::internal::WireFormatLite::WriteFloat(4, this->gun_angle(), output);
+    ::google::protobuf::internal::WireFormatLite::WriteFloat(5, this->gun_angle(), output);
   }
 
-  // int32 protect = 5;
+  // int32 protect = 6;
   if (this->protect() != 0) {
-    ::google::protobuf::internal::WireFormatLite::WriteInt32(5, this->protect(), output);
+    ::google::protobuf::internal::WireFormatLite::WriteInt32(6, this->protect(), output);
   }
 
-  // float machine_turn = 6;
+  // float machine_turn = 7;
   if (this->machine_turn() != 0) {
-    ::google::protobuf::internal::WireFormatLite::WriteFloat(6, this->machine_turn(), output);
+    ::google::protobuf::internal::WireFormatLite::WriteFloat(7, this->machine_turn(), output);
   }
 
-  // float gun_turn = 7;
+  // float gun_turn = 8;
   if (this->gun_turn() != 0) {
-    ::google::protobuf::internal::WireFormatLite::WriteFloat(7, this->gun_turn(), output);
+    ::google::protobuf::internal::WireFormatLite::WriteFloat(8, this->gun_turn(), output);
   }
 
-  // float x = 8;
+  // float x = 9;
   if (this->x() != 0) {
-    ::google::protobuf::internal::WireFormatLite::WriteFloat(8, this->x(), output);
+    ::google::protobuf::internal::WireFormatLite::WriteFloat(9, this->x(), output);
   }
 
-  // float y = 9;
+  // float y = 10;
   if (this->y() != 0) {
-    ::google::protobuf::internal::WireFormatLite::WriteFloat(9, this->y(), output);
+    ::google::protobuf::internal::WireFormatLite::WriteFloat(10, this->y(), output);
   }
 
   if ((_internal_metadata_.have_unknown_fields() &&  ::google::protobuf::internal::GetProto3PreserveUnknownsDefault())) {
@@ -692,39 +713,44 @@ void Data::SerializeWithCachedSizes(
     target = ::google::protobuf::internal::WireFormatLite::WriteFloatToArray(2, this->distance(), target);
   }
 
-  // int32 ammo = 3;
+  // float km_left = 3;
+  if (this->km_left() != 0) {
+    target = ::google::protobuf::internal::WireFormatLite::WriteFloatToArray(3, this->km_left(), target);
+  }
+
+  // int32 ammo = 4;
   if (this->ammo() != 0) {
-    target = ::google::protobuf::internal::WireFormatLite::WriteInt32ToArray(3, this->ammo(), target);
+    target = ::google::protobuf::internal::WireFormatLite::WriteInt32ToArray(4, this->ammo(), target);
   }
 
-  // float gun_angle = 4;
+  // float gun_angle = 5;
   if (this->gun_angle() != 0) {
-    target = ::google::protobuf::internal::WireFormatLite::WriteFloatToArray(4, this->gun_angle(), target);
+    target = ::google::protobuf::internal::WireFormatLite::WriteFloatToArray(5, this->gun_angle(), target);
   }
 
-  // int32 protect = 5;
+  // int32 protect = 6;
   if (this->protect() != 0) {
-    target = ::google::protobuf::internal::WireFormatLite::WriteInt32ToArray(5, this->protect(), target);
+    target = ::google::protobuf::internal::WireFormatLite::WriteInt32ToArray(6, this->protect(), target);
   }
 
-  // float machine_turn = 6;
+  // float machine_turn = 7;
   if (this->machine_turn() != 0) {
-    target = ::google::protobuf::internal::WireFormatLite::WriteFloatToArray(6, this->machine_turn(), target);
+    target = ::google::protobuf::internal::WireFormatLite::WriteFloatToArray(7, this->machine_turn(), target);
   }
 
-  // float gun_turn = 7;
+  // float gun_turn = 8;
   if (this->gun_turn() != 0) {
-    target = ::google::protobuf::internal::WireFormatLite::WriteFloatToArray(7, this->gun_turn(), target);
+    target = ::google::protobuf::internal::WireFormatLite::WriteFloatToArray(8, this->gun_turn(), target);
   }
 
-  // float x = 8;
+  // float x = 9;
   if (this->x() != 0) {
-    target = ::google::protobuf::internal::WireFormatLite::WriteFloatToArray(8, this->x(), target);
+    target = ::google::protobuf::internal::WireFormatLite::WriteFloatToArray(9, this->x(), target);
   }
 
-  // float y = 9;
+  // float y = 10;
   if (this->y() != 0) {
-    target = ::google::protobuf::internal::WireFormatLite::WriteFloatToArray(9, this->y(), target);
+    target = ::google::protobuf::internal::WireFormatLite::WriteFloatToArray(10, this->y(), target);
   }
 
   if ((_internal_metadata_.have_unknown_fields() &&  ::google::protobuf::internal::GetProto3PreserveUnknownsDefault())) {
@@ -754,41 +780,46 @@ size_t Data::ByteSizeLong() const {
     total_size += 1 + 4;
   }
 
-  // int32 ammo = 3;
+  // float km_left = 3;
+  if (this->km_left() != 0) {
+    total_size += 1 + 4;
+  }
+
+  // int32 ammo = 4;
   if (this->ammo() != 0) {
     total_size += 1 +
       ::google::protobuf::internal::WireFormatLite::Int32Size(
         this->ammo());
   }
 
-  // float gun_angle = 4;
+  // float gun_angle = 5;
   if (this->gun_angle() != 0) {
     total_size += 1 + 4;
   }
 
-  // int32 protect = 5;
+  // int32 protect = 6;
   if (this->protect() != 0) {
     total_size += 1 +
       ::google::protobuf::internal::WireFormatLite::Int32Size(
         this->protect());
   }
 
-  // float machine_turn = 6;
+  // float machine_turn = 7;
   if (this->machine_turn() != 0) {
     total_size += 1 + 4;
   }
 
-  // float gun_turn = 7;
+  // float gun_turn = 8;
   if (this->gun_turn() != 0) {
     total_size += 1 + 4;
   }
 
-  // float x = 8;
+  // float x = 9;
   if (this->x() != 0) {
     total_size += 1 + 4;
   }
 
-  // float y = 9;
+  // float y = 10;
   if (this->y() != 0) {
     total_size += 1 + 4;
   }
@@ -825,6 +856,9 @@ void Data::MergeFrom(const Data& from) {
   }
   if (from.distance() != 0) {
     set_distance(from.distance());
+  }
+  if (from.km_left() != 0) {
+    set_km_left(from.km_left());
   }
   if (from.ammo() != 0) {
     set_ammo(from.ammo());
@@ -875,6 +909,7 @@ void Data::InternalSwap(Data* other) {
   using std::swap;
   swap(speed_, other->speed_);
   swap(distance_, other->distance_);
+  swap(km_left_, other->km_left_);
   swap(ammo_, other->ammo_);
   swap(gun_angle_, other->gun_angle_);
   swap(protect_, other->protect_);
