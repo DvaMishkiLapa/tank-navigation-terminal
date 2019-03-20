@@ -83,7 +83,7 @@ public:
     QPushButton *tank_back;
     QSpacerItem *verticalSpacer;
     QVBoxLayout *verticalLayout_3;
-    QPushButton *protection;
+    QPushButton *protect;
     QPushButton *tank_stop;
     QPushButton *tank_left;
     QPushButton *tank_right;
@@ -232,8 +232,6 @@ public:
 
         horizontalLayout_5->addWidget(protection_label);
 
-        label_4->raise();
-        protection_label->raise();
 
         verticalLayout_2->addWidget(frame_6);
 
@@ -537,20 +535,20 @@ public:
 
         verticalLayout_3 = new QVBoxLayout();
         verticalLayout_3->setObjectName(QString::fromUtf8("verticalLayout_3"));
-        protection = new QPushButton(groupBox_13);
-        protection->setObjectName(QString::fromUtf8("protection"));
+        protect = new QPushButton(groupBox_13);
+        protect->setObjectName(QString::fromUtf8("protect"));
         QSizePolicy sizePolicy4(QSizePolicy::Minimum, QSizePolicy::Maximum);
         sizePolicy4.setHorizontalStretch(0);
         sizePolicy4.setVerticalStretch(0);
-        sizePolicy4.setHeightForWidth(protection->sizePolicy().hasHeightForWidth());
-        protection->setSizePolicy(sizePolicy4);
-        protection->setMinimumSize(QSize(100, 33));
-        protection->setFont(font1);
-        protection->setStyleSheet(QString::fromUtf8("font: 9pt \"Ubuntu\";\n"
+        sizePolicy4.setHeightForWidth(protect->sizePolicy().hasHeightForWidth());
+        protect->setSizePolicy(sizePolicy4);
+        protect->setMinimumSize(QSize(100, 33));
+        protect->setFont(font1);
+        protect->setStyleSheet(QString::fromUtf8("font: 9pt \"Ubuntu\";\n"
 "color: rgb(0, 0, 0);\n"
 "background: rgb(255, 255, 127)"));
 
-        verticalLayout_3->addWidget(protection);
+        verticalLayout_3->addWidget(protect);
 
 
         gridLayout_2->addLayout(verticalLayout_3, 2, 1, 1, 3);
@@ -1012,7 +1010,7 @@ public:
         gun_right->setText(QApplication::translate("MainWindow", "\360\237\241\222", 0, QApplication::UnicodeUTF8));
         tank_forward->setText(QApplication::translate("MainWindow", "\360\237\241\221 ", 0, QApplication::UnicodeUTF8));
         tank_back->setText(QApplication::translate("MainWindow", "\360\237\241\223 ", 0, QApplication::UnicodeUTF8));
-        protection->setText(QApplication::translate("MainWindow", "\320\227\320\220\320\251\320\230\320\242\320\220", 0, QApplication::UnicodeUTF8));
+        protect->setText(QApplication::translate("MainWindow", "\320\227\320\220\320\251\320\230\320\242\320\220", 0, QApplication::UnicodeUTF8));
         tank_stop->setText(QApplication::translate("MainWindow", "\320\241\320\242\320\236\320\237!", 0, QApplication::UnicodeUTF8));
         tank_left->setText(QApplication::translate("MainWindow", "\360\237\241\220", 0, QApplication::UnicodeUTF8));
         tank_right->setText(QApplication::translate("MainWindow", "\360\237\241\222", 0, QApplication::UnicodeUTF8));

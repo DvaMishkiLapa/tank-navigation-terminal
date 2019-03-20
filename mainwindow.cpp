@@ -18,7 +18,26 @@ MainWindow::MainWindow(QWidget *parent):
     ui(new Ui::MainWindow){
     ui->setupUi(this);
     const int opt = 1;
+    
+    connect(ui->tank_forward, SIGNAL(clicked()), this, SLOT(btn_clicked()));
+    connect(ui->tank_back, SIGNAL(clicked()), this, SLOT(btn_clicked()));
+    connect(ui->tank_left, SIGNAL(clicked()), this, SLOT(btn_clicked()));
+    connect(ui->tank_right, SIGNAL(clicked()), this, SLOT(btn_clicked()));
+    connect(ui->tank_stop, SIGNAL(clicked()), this, SLOT(btn_clicked()));
+    connect(ui->gun_up, SIGNAL(clicked()), this, SLOT(btn_clicked()));
+    connect(ui->gun_down, SIGNAL(clicked()), this, SLOT(btn_clicked()));
+    connect(ui->gun_left, SIGNAL(clicked()), this, SLOT(btn_clicked()));
+    connect(ui->gun_right, SIGNAL(clicked()), this, SLOT(btn_clicked()));
+    connect(ui->gun_fire, SIGNAL(clicked()), this, SLOT(btn_clicked()));
+    connect(ui->protect, SIGNAL(clicked()), this, SLOT(btn_clicked()));
     setsockopt(sock_out, SOL_SOCKET, SO_REUSEPORT, &opt, sizeof(opt));
+}
+
+
+void MainWindow::btn_clicked(){
+    QPushButton* btn = qobject_cast<QPushButton*>(sender());
+    std::string utf8_text = btn->objectName().toUtf8().constData();
+    send_command(utf8_text);
 }
 
 
@@ -41,7 +60,7 @@ void MainWindow::close_and_del(){
 }
 
 
-void MainWindow::send_command(){
+void MainWindow::send_command(std::string command){
     if (!(command.empty())){
         protocol::Action act;
         act.set_action(command);
@@ -57,7 +76,6 @@ void MainWindow::send_command(){
 
 
 void MainWindow::update_data(){
-    send_command();
     int bytesReceived = 0;
     vector<char> buffer(1024);
     bytesReceived = recv(sock_in, &buffer[0], buffer.size(), 0);
@@ -120,7 +138,6 @@ void MainWindow::start_connection_in(){
         perror("socket");
         exit(1);
     }
-    //192.168.43.206
     addr.sin_family = AF_INET;
     addr.sin_port = htons(server_port);
     addr.sin_addr.s_addr =  inet_addr("0.0.0.0");
@@ -139,60 +156,6 @@ void MainWindow::start_connection_in(){
     }
 }
 
-// tank control
-void MainWindow::on_tank_forward_clicked(){
-    command = "tank_forward";
-}
-
-
-void MainWindow::on_tank_back_clicked(){
-    command = "tank_back";
-}
-
-
-void MainWindow::on_tank_left_clicked(){
-    command = "tank_left";
-}
-
-
-void MainWindow::on_tank_right_clicked(){
-    command = "tank_right";
-}
-
-
-void MainWindow::on_tank_stop_clicked(){
-    command = "tank_stop";
-}
-
-// tower control
-void MainWindow::on_gun_up_clicked(){
-    command = "gun_up";
-}
-
-
-void MainWindow::on_gun_down_clicked(){
-    command = "gun_down";
-}
-
-
-void MainWindow::on_gun_left_clicked(){
-    command = "gun_left";
-}
-
-
-void MainWindow::on_gun_right_clicked(){
-    command = "gun_right";
-}
-
-
-void MainWindow::on_gun_fire_clicked(){
-    command = "gun_fire";
-}
-
-// security activation
-void MainWindow::on_protection_clicked(){
-    command = "protect";
-}
 
 // weapon control
 void MainWindow::on_type_gun_comboBox_currentIndexChanged(){
@@ -224,7 +187,7 @@ void MainWindow::on_connect_clicked(){
 
     start_connection_out();
 
-    send_command();
+    send_command("42");
     start_connection_in();
 
     timer = new QTimer();

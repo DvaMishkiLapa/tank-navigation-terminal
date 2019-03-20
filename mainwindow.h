@@ -3,6 +3,7 @@
 
 #include <QMainWindow>
 #include <QTimer>
+#include <QPushButton>
 
 namespace Ui {
 class MainWindow;
@@ -26,31 +27,31 @@ class MainWindow : public QMainWindow{
         int server_port = 0;
 
         QTimer *timer = 0;
-        std::string command = "42";
 
     public slots:
         void close_and_del();
-        void send_command();
+        void btn_clicked();
+        void send_command(std::string);
         void start_connection_out();
         void start_connection_in();
         void update_data();
 
         // tank control slots
-        void on_tank_forward_clicked();
-        void on_tank_back_clicked();
-        void on_tank_left_clicked();
-        void on_tank_right_clicked();
-        void on_tank_stop_clicked();
+        // void on_tank_forward_clicked();
+        // void on_tank_back_clicked();
+        // void on_tank_left_clicked();
+        // void on_tank_right_clicked();
+        // void on_tank_stop_clicked();
 
-        // tower control slots
-        void on_gun_up_clicked();
-        void on_gun_down_clicked();
-        void on_gun_left_clicked();
-        void on_gun_right_clicked();
-        void on_gun_fire_clicked();
+        // // tower control slots
+        // void on_gun_up_clicked();
+        // void on_gun_down_clicked();
+        // void on_gun_left_clicked();
+        // void on_gun_right_clicked();
+        // void on_gun_fire_clicked();
 
-        // security activation slots
-        void on_protection_clicked();
+        // // security activation slots
+        // void on_protection_clicked();
 
         // weapon control
         void on_type_gun_comboBox_currentIndexChanged();
