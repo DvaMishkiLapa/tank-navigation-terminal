@@ -41,7 +41,7 @@ void MainWindow::close_and_del(){
 }
 
 
-void MainWindow::update_data(){
+void MainWindow::send_command(){
     if (!(command.empty())){
         protocol::Action act;
         act.set_action(command);
@@ -53,12 +53,11 @@ void MainWindow::update_data(){
         else
             cout << "Не отправилось :(" << endl;
     }
+}
 
-    if (flag){
-        start_connection_in();
-        flag = 0;
-    }
 
+void MainWindow::update_data(){
+    send_command();
     int bytesReceived = 0;
     vector<char> buffer(1024);
     bytesReceived = recv(sock_in, &buffer[0], buffer.size(), 0);
@@ -121,7 +120,7 @@ void MainWindow::start_connection_in(){
         perror("socket");
         exit(1);
     }
-    
+    //192.168.43.206
     addr.sin_family = AF_INET;
     addr.sin_port = htons(server_port);
     addr.sin_addr.s_addr =  inet_addr("0.0.0.0");
@@ -224,6 +223,10 @@ void MainWindow::on_connect_clicked(){
     server_port = qserver_port.split(" ")[0].toInt();
 
     start_connection_out();
+
+    send_command();
+    start_connection_in();
+
     timer = new QTimer();
     connect(timer, SIGNAL(timeout()), this, SLOT(update_data()));
     timer->start(17);

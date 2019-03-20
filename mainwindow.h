@@ -4,7 +4,6 @@
 #include <QMainWindow>
 #include <QTimer>
 
-
 namespace Ui {
 class MainWindow;
 }
@@ -28,10 +27,10 @@ class MainWindow : public QMainWindow{
 
         QTimer *timer = 0;
         std::string command = "42";
-        bool flag = 1;
 
     public slots:
         void close_and_del();
+        void send_command();
         void start_connection_out();
         void start_connection_in();
         void update_data();
